@@ -26,6 +26,8 @@
     };
     services.displayManager.ly.enable = true;
 
+    services.openssh.enable = true;
+
     users.users.kyle = {
         isNormalUser = true;
         extraGroups = [ "wheel" ]; 
