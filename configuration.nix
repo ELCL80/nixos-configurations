@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, inputs, ... }: {
 
     imports = [ 
         ./hardware-configuration.nix
@@ -24,6 +24,13 @@
             xfce.enable = true;
         };
     };
+
+    programs.hyprland = {
+        enable = true;
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
+
     services.displayManager.ly.enable = true;
 
     services.openssh.enable = true;
