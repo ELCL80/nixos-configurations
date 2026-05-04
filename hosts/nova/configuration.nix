@@ -62,6 +62,7 @@
                 '';
             };
         };
+        joycond-cemuhook.enable = true;
     };
 
     environment = {
