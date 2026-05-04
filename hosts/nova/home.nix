@@ -40,5 +40,6 @@
 	    withPython3 = true;
 	    withRuby = false;
         };
+        zoxide.enable = true;
     };
 }
