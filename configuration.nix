@@ -4,34 +4,37 @@
         ./hardware-configuration.nix
     ];
 
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot = {
+    	loader.systemd-boot.enable = true;
+    	loader.efi.canTouchEfiVariables = true;
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    	kernelPackages = pkgs.linuxPackages_latest;
+    };
 
     virtualisation.virtualbox.guest.enable = false;
 
-    networking.hostName = "nixos"; # Define your hostname.
+    networking = {
+    	hostName = "nixos"; # Define your hostname.
 
-    networking.networkmanager.enable = true;
+    	networkmanager.enable = true;
+    };
 
     time.timeZone = "America/Jamaica";
 
-    services.xserver = {
-        enable = true;
-        desktopManager = {
-            xterm.enable = false;
-            xfce.enable = true;
+    services = {
+    	xserver = {
+            enable = true;
+            desktopManager = {
+                xterm.enable = false;
+                xfce.enable = true;
+            };
         };
+
+
+    	displayManager.ly.enable = true;
+
+    	openssh.enable = true;
     };
-
-    programs.niri = {
-        enable = true;
-    };
-
-    services.displayManager.ly.enable = true;
-
-    services.openssh.enable = true;
 
     users.users.kyle = {
         isNormalUser = true;
@@ -41,21 +44,26 @@
             tree
         ];
     };
+    programs = {
+    	firefox.enable = true;
+    	steam.enable = true;
 
-    programs.firefox.enable = true;
-    programs.steam.enable = true;
+    	niri.enable = true;
+    };
 
-    environment.systemPackages = with pkgs; [
-        vim 
-        wget
-        git
-        alacritty
-        tmux
-    ];
+    environment = {
+    	systemPackages = with pkgs; [
+            vim 
+            wget
+            git
+            alacritty
+            tmux
+        ];
 
-    environment.shells = [
-        "/etc/profiles/per-user/kyle/bin/zsh"
-    ];
+    	shells = [
+            "/etc/profiles/per-user/kyle/bin/zsh"
+        ];
+    };
 
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
