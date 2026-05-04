@@ -25,6 +25,10 @@
         };
     };
 
+    programs.niri = {
+        enable = true;
+    };
+
     services.displayManager.ly.enable = true;
 
     services.openssh.enable = true;
@@ -44,6 +48,7 @@
         vim 
         wget
         git
+        alacritty
     ];
 
     nix.settings = {
