@@ -50,6 +50,7 @@
         wget
         git
         alacritty
+        tmux
     ];
 
     environment.shells = [
