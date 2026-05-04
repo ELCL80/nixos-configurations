@@ -61,6 +61,7 @@
             };
         };
         joycond-cemuhook.enable = true;
+        zoxide.enable = true;
     };
 
     environment = {
