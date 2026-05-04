@@ -51,6 +51,10 @@
         alacritty
     ];
 
+    environment.shells = [
+        "/etc/profiles/per-user/kyle/bin/zsh"
+    ];
+
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
     };
