@@ -25,12 +25,6 @@
         };
     };
 
-    programs.hyprland = {
-        enable = true;
-        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    };
-
     services.displayManager.ly.enable = true;
 
     services.openssh.enable = true;
@@ -44,6 +38,7 @@
     };
 
     programs.firefox.enable = true;
+    programs.steam.enable = true;
 
     environment.systemPackages = with pkgs; [
         vim 
@@ -51,7 +46,9 @@
         git
     ];
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+    };
 
     system.stateVersion = "25.11";
 }
