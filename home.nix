@@ -37,7 +37,7 @@
 
         neovim = {
             enable = true;
-	    withPython = true;
+	    withPython3 = true;
 	    withRuby = false;
         };
     };
