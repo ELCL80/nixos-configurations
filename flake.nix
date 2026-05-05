@@ -2,12 +2,18 @@
     description = "Nixos Configuration";
 
     inputs = {
+        # Unstable (Rolling)
         nixpkgs.url = "nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        
+        # Stable 
+        nixpkgs-stable.url = "nixpkgs/nixos-25.11";
+        home-manager-stable.url = "github:nix-community/home-manager/release-25.11";
+        home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+    outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-stable, home-manager-stable, ... }: {
         nixosConfigurations  = {
             nova = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -21,6 +27,23 @@
                         home-manager.extraSpecialArgs = { inherit inputs; };
                         home-manager.users.kyle = {
                             imports = [ ./hosts/nova/home.nix ];
+                        };
+                        home-manager.backupFileExtension = "backup";
+                    }
+                ];
+            };
+            nixos = nixpkgs-stable.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = { inherit inputs; };
+                modules = [
+                    ./hosts/nixos/configuration.nix
+                    { nixpkgs-stable.config.allowUnfree = true; }
+                    home-manager-stable.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.extraSpecialArgs = { inherit inputs; };
+                        home-manager.users.alpha = {
+                            imports = [ ./hosts/nixos/home.nix ];
                         };
                         home-manager.backupFileExtension = "backup";
                     }
