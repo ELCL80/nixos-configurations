@@ -37,7 +37,7 @@
                 specialArgs = { inherit inputs; };
                 modules = [
                     ./hosts/nixos/configuration.nix
-                    { nixpkgs-stable.config.allowUnfree = true; }
+                    { nixpkgs.config.allowUnfree = true; }
                     home-manager-stable.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
