@@ -1,5 +1,8 @@
 { config, lib, pkgs, ... }: {
 
+    imports = [
+    	../../modules/nvim/neovim.nix
+    ];
     home = {
         username = "kyle";
         homeDirectory = "/home/kyle";
@@ -21,7 +24,7 @@
             initContent = "source ~/.p10k.zsh";
             shellAliases = {
                 rebuild = "sudo nixos-rebuild switch";
-                nixconf = "sudo vim /etc/nixos/";
+                nixconf = "sudo nvim /etc/nixos/hosts/nova";
             };
             plugins = [
                 {
@@ -33,12 +36,6 @@
             oh-my-zsh = {
                 enable = true;
             };
-        };
-
-        neovim = {
-            enable = true;
-	    withPython3 = true;
-	    withRuby = false;
         };
 
         zoxide.enable = true;

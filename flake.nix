@@ -19,14 +19,14 @@
                 system = "x86_64-linux";
                 specialArgs = { inherit inputs; };
                 modules = [
-                    ./hosts/nova/configuration.nix
+                    ./modules/hosts/nova/configuration.nix
                     { nixpkgs.config.allowUnfree = true; }
                     home-manager.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.extraSpecialArgs = { inherit inputs; };
                         home-manager.users.kyle = {
-                            imports = [ ./hosts/nova/home.nix ];
+                            imports = [ ./modules/hosts/nova/home.nix ];
                         };
                         home-manager.backupFileExtension = "backup";
                     }
@@ -36,14 +36,14 @@
                 system = "x86_64-linux";
                 specialArgs = { inherit inputs; };
                 modules = [
-                    ./hosts/nixos/configuration.nix
+                    ./modules/hosts/nixos/configuration.nix
                     { nixpkgs.config.allowUnfree = true; }
                     home-manager-stable.nixosModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
                         home-manager.extraSpecialArgs = { inherit inputs; };
                         home-manager.users.alpha = {
-                            imports = [ ./hosts/nixos/home.nix ];
+                            imports = [ ./modules/hosts/nixos/home.nix ];
                         };
                         home-manager.backupFileExtension = "backup";
                     }
