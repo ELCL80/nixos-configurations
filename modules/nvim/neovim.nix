@@ -1,10 +1,8 @@
 { config, lib, pkgs, ... }: {
     programs.neovim = {
         enable = true;
-        generatedConfigs = {
-            lua = ''
+        extraLuaConfig = = ''
                 dofile("init.lua")
-            '';
-        };
+        '';
     };
 }
