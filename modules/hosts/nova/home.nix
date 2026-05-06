@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
 
     imports = [
-    	../../modules/nvim/neovim.nix
+    	../../nvim/neovim.nix
     ];
     home = {
         username = "kyle";
