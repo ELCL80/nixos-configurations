@@ -11,6 +11,12 @@
         nixpkgs-stable.url = "nixpkgs/nixos-25.11";
         home-manager-stable.url = "github:nix-community/home-manager/release-25.11";
         home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
+
+        # Other
+        nvim-config = {
+            url = github:ELCL80/nvim-dotfiles;
+            flake = false;
+        };
     };
 
     outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-stable, home-manager-stable, ... }: {

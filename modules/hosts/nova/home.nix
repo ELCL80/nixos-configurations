@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, inputs, ... }: {
 
     imports = [
     ];
@@ -8,6 +8,9 @@
         homeDirectory = "/home/kyle";
         stateVersion = "25.11";
         packages = with pkgs; [ zsh-powerlevel10k meslo-lgs-nf ];
+        file."config/nvim" = {
+            source = inputs.nvim-config;
+            recursive = true;
     };
     programs = {
         git.enable = true;
