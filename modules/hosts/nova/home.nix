@@ -15,7 +15,7 @@
             enable = true;
             shellAliases = {
                 rebuild = "sudo nixos-rebuild switch";
-                nixconf = "sudo nvim /etc/nixos/hosts/nova";
+                nixconf = "sudo nvim /etc/nixos/modules/hosts/nova";
             };
         };
 
