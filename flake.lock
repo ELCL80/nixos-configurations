@@ -71,12 +71,29 @@
         "type": "indirect"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777979703,
+        "narHash": "sha256-LjlJIlcIo0SHVXfTyY9TcbYgz2RbCvS5gDJxKcowwRE=",
+        "owner": "ELCL80",
+        "repo": "nvim-dotfiles",
+        "rev": "08f0270ea36d0e8967bb3631a1f6a45ae7569157",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ELCL80",
+        "repo": "nvim-dotfiles",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "home-manager-stable": "home-manager-stable",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-stable": "nixpkgs-stable"
+        "nixpkgs-stable": "nixpkgs-stable",
+        "nvim-config": "nvim-config"
       }
     }
   },

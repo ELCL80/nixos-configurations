@@ -38,28 +38,11 @@
         isNormalUser = true;
         shell = "/etc/profiles/per-user/kyle/bin/zsh";
         extraGroups = [ "wheel" ]; 
-        packages = with pkgs; [
-            tree
-        ];
     };
     programs = {
     	firefox.enable = true;
     	steam.enable = true;
     	niri.enable = true;
-        neovim = {
-            enable = true;
-            configure = {
-                customRC = ''
-                    set number relativenumber
-                    set autoindent
-                    set smartindent
-                    set tabstop=4
-                    set softtabstop=4
-                    set shiftwidth=4
-                    set expandtab
-                '';
-            };
-        };
         joycond-cemuhook.enable = true;
     };
 
@@ -68,8 +51,10 @@
             vim 
             wget
             git
-            alacritty
-            tmux
+            unzip
+            curl
+            gnumake
+            neovim
         ];
 
     	shells = [
@@ -83,4 +68,3 @@
 
     system.stateVersion = "25.11";
 }
-
