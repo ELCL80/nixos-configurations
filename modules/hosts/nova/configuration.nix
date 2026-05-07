@@ -8,17 +8,11 @@
         ./../../system/environment.nix
         ./../../system/users.nix
         ./../../system/services.nix
+        ./../../system/nix.nix
+        ./../../system/time.nix
     ];
 
     virtualisation.virtualbox.guest.enable = false;
-
-
-    time.timeZone = "America/Jamaica";
-
-
-    nix.settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-    };
 
     system.stateVersion = "25.11";
 }
