@@ -1,8 +1,8 @@
 { config, lib, pkgs, inputs, ... }: {
 
     imports = [
-        ./../../development.nix
-        ./../../shell.nix
+        ./../../home/development.nix
+        ./../../home/shell.nix
     ];
 
     home = {
