@@ -4,6 +4,7 @@
             zsh-powerlevel10k
             meslo-lgs-nf
         ];
+    };
     programs = {
         zsh = {
             enable = true;
@@ -26,3 +27,5 @@
         zoxide.enable = true;
     };
 }
+
+
