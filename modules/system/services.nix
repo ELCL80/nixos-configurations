@@ -9,6 +9,5 @@
         };
     	displayManager.ly.enable = true;
     	openssh.enable = true;
-        joycond.enable = true;
     };
 }

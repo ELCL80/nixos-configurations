@@ -1,11 +1,12 @@
 { config, lib, pkgs, inputs, ... }: {
+    imports = [
+        ./languages.nix
+    ];
     home = {
         packages = with pkgs; [
             tree
 	        neovim
             tmux
-            nodejs 
-            haskell-language-server
         ];
 
         file.".config/nvim" = {

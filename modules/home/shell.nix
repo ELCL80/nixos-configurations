@@ -5,6 +5,8 @@
             nerd-fonts.meslo-lg
             nerd-fonts.jetbrains-mono
         ];
+
+        file.".p10k.zsh".source = "${inputs.dotfiles}/.p10k.zsh";
     };
     programs = {
         zsh = {
@@ -13,6 +15,7 @@
             shellAliases = {
                 rebuild = "sudo nixos-rebuild switch";
                 nixconf = "sudo nvim /etc/nixos/modules/hosts/nova";
+                zen = "zen-beta";
             };
             plugins = [
                 {
