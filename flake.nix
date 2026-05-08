@@ -5,7 +5,14 @@
         # Unstable (Rolling)
         nixpkgs.url = "nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        zen-browser = {
+            url = "github:0xc000022070/zen-browser-flake";
+            inputs = {
+                nixpkgs.follows = "nixpkgs";
+                home-manager.follows = "home-manager";
+            };
+        };
+       home-manager.inputs.nixpkgs.follows = "nixpkgs";
         
         # Stable 
         nixpkgs-stable.url = "nixpkgs/nixos-25.11";

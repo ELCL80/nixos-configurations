@@ -2,7 +2,8 @@
     home = {
         packages = with pkgs; [
             tree
-	    neovim
+	        neovim
+            tmux
             nodejs 
             haskell-language-server
         ];
