@@ -13,7 +13,7 @@
                 home-manager.follows = "home-manager";
             };
         };
-       home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        home-manager.inputs.nixpkgs.follows = "nixpkgs";
         
         # Stable 
         nixpkgs-stable.url = "nixpkgs/nixos-25.11";
@@ -29,6 +29,10 @@
             url = github:ELCL80/dotfiles;
             flake = false;
         };
+        nixos-configurations = {
+                url = github:ELCL80/nixos-configurations;
+                flake = false;
+            };
     };
 
     outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-stable, home-manager-stable, ... }: {
@@ -69,6 +73,13 @@
                         };
                         home-manager.backupFileExtension = "backup";
                     }
+                ];
+            };
+            isoInstaller = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = { inherit inputs; };
+                modules = [
+                    ./modules/hosts/isoInstaller/configuration.nix
                 ];
             };
         };
