@@ -10,6 +10,7 @@
         ./../../system/services.nix
         ./../../system/nix.nix
         ./../../system/time.nix
+        ./../../system/niri.nix
     ];
 
     virtualisation.virtualbox.guest.enable = false;
