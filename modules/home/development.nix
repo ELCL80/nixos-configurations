@@ -2,8 +2,7 @@
     home = {
         packages = with pkgs; [
             tree
-            nodejs
-            nvim 
+            nodejs 
             haskell-language-server
         ];
 
