@@ -3,6 +3,7 @@
         packages = with pkgs; [
             zsh-powerlevel10k
             meslo-lgs-nf
+            jetbrains-mono-nf
         ];
     };
     programs = {
@@ -27,5 +28,4 @@
         zoxide.enable = true;
     };
 }
-
 

@@ -3,6 +3,8 @@
         packages = with pkgs; [
             tree
             nodejs
+            nvim 
+            haskell-language-server
         ];
 
         file.".config/nvim" = {
