@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778254528,
+        "narHash": "sha256-7TUpmyNL7OTkU9aTq2oI7keV4IQ4LZcH3qS6GscIMNw=",
+        "owner": "ELCL80",
+        "repo": "dotfiles",
+        "rev": "95dd73d32a6614c86865d2cd0a5e1377dec9410e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ELCL80",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -38,6 +54,38 @@
         "owner": "nix-community",
         "ref": "release-25.11",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixos-configurations": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778274565,
+        "narHash": "sha256-gjsk8XkbdzQl7Pzpjrx/ahbZ2HeNkV/P1O0ucQB0rUQ=",
+        "owner": "ELCL80",
+        "repo": "nixos-configurations",
+        "rev": "515f80fdc4314d9aab7bd64ba3ae6648eee00f84",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ELCL80",
+        "repo": "nixos-configurations",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1778143761,
+        "narHash": "sha256-lkesY6x2X2qxlqLM7CT2iM/0rP2JB7fruPN3h8POXmI=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "3bcaa367d4c550d687a17ac792fd5cda214ee871",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
         "type": "github"
       }
     },
@@ -89,8 +137,11 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "home-manager-stable": "home-manager-stable",
+        "nixos-configurations": "nixos-configurations",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "nvim-config": "nvim-config",
