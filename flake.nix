@@ -35,7 +35,7 @@
             };
     };
 
-    outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-stable, home-manager-stable, ... }: {
+    outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-stable, home-manager-stable, nixos-hardware, ... }: {
         nixosConfigurations  = {
 
             nova = nixpkgs.lib.nixosSystem {
