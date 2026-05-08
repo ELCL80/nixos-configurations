@@ -2,8 +2,8 @@
     home = {
         packages = with pkgs; [
             zsh-powerlevel10k
-            meslo-lgs-nf
-            jetbrains-mono-nf
+            nerd-fonts.meslo-lg
+            nerd-fonts.jetbrains-mono
         ];
     };
     programs = {
