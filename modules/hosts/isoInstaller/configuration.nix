@@ -14,7 +14,10 @@
         alacritty
         fuzzel
         tmux
+        ubuntu-font-family
     ];
+
+    fonts.enableDefaultPackages = true;
     
     networking.networkmanager.enable = true;
 
@@ -34,6 +37,7 @@
             cp -r /etc/nixos-ELCL/* /mnt/etc/nixos
             mv -f temp/hardware-configuration.nix .
             rp -rf temp
+            exit
         '';
     };
 
