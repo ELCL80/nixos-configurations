@@ -11,9 +11,9 @@
         ./../../system/nix.nix
         ./../../system/time.nix
         ./../../system/niri.nix
+        ./../../system/zram.nix
+        ./../../system/gaming.nix
     ];
-
-    virtualisation.virtualbox.guest.enable = false;
 
     system.stateVersion = "25.11";
 }
