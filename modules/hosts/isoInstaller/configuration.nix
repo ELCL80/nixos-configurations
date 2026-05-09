@@ -14,7 +14,6 @@
         alacritty
         fuzzel
         tmux
-        ubuntu-font-family
     ];
 
     fonts.enableDefaultPackages = true;
